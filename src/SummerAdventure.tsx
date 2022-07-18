@@ -20,11 +20,9 @@ import video_1 from "../assets/videos/1.mp4";
 import video_2 from "../assets/videos/2.mp4";
 import video_3 from "../assets/videos/3.mp4";
 import video_4 from "../assets/videos/4.mp4";
-import video_5 from "../assets/videos/5.mp4";
-import video_6 from "../assets/videos/6.mp4";
-import video_7 from "../assets/videos/7.mp4";
 import video_8 from "../assets/videos/8.mp4";
 // ### import them together
+import { Starter } from './components/Starter';
 
 
 interface ComponentProps {
@@ -39,9 +37,7 @@ export const SummerAdventure: React.FC<ComponentProps> = ({titleText, titleColor
 	return (
 		<Wrapper>
 			<Sequence from={0} durationInFrames={65}>
-				<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
-					<Title titleText={'with us you have the best summer ever'} titleColor={'#495B53'} />
-				</AbsoluteFill>
+				<Starter />
 			</Sequence>
 			<Sequence from={60} durationInFrames={135}>
 				<CustomVideoComponent 
@@ -51,19 +47,16 @@ export const SummerAdventure: React.FC<ComponentProps> = ({titleText, titleColor
 								src: video_1, 
 								volume: 0,
 								from: 0,
-								style: null
 							},
 							{
 								src: video_2, 
 								volume: 0,
 								from: 65,
-								style: null 
 							},
 							{
 								src: video_3, 
 								volume: 0,
 								from: 90,
-								style: null 
 							},
 						]
 					}
@@ -82,7 +75,6 @@ export const SummerAdventure: React.FC<ComponentProps> = ({titleText, titleColor
 								src: video_3, 
 								volume: 0,
 								from: 0,
-								style: null, 
 								startFrom: 85,
             		endAt: 110
 							},
@@ -90,7 +82,6 @@ export const SummerAdventure: React.FC<ComponentProps> = ({titleText, titleColor
 								src: video_4, 
 								volume: 0,
 								from: 20,
-								style: null, 
 							},
 						]
 					}
@@ -109,7 +100,6 @@ export const SummerAdventure: React.FC<ComponentProps> = ({titleText, titleColor
 								src: video_8, 
 								volume: 0,
 								from: 0,
-								style: null,
 								startFrom: 1120,
             		endAt: 1300
 							},

@@ -7,7 +7,14 @@ import video_3 from "../../assets/videos/3.mp4";
 
 
 interface ComponentProps {
-  myVideos: Object[]
+  myVideos: {
+    src: string;
+    volume: number;
+    from: number;
+    style?: object;
+    startFrom?: number;
+    endAt?: number
+  }[]
   // ### need update 
 }
 
