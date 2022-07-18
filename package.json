@@ -13,11 +13,13 @@
   "dependencies": {
     "@remotion/cli": "^3.0.0",
     "@remotion/eslint-config": "^3.0.0",
+    "@types/styled-components": "^5.1.25",
     "eslint": "^8.14.0",
     "prettier": "^2.2.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "remotion": "^3.0.0",
+    "styled-components": "^5.3.5",
     "typescript": "^4.6.3"
   },
   "devDependencies": {
