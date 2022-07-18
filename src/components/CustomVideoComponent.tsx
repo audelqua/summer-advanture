@@ -13,7 +13,9 @@ interface ComponentProps {
     from: number;
     style?: object;
     startFrom?: number;
-    endAt?: number
+    endAt?: number,
+    title?: string,
+    subtitle?: string
   }[]
   // ### need update 
 }
