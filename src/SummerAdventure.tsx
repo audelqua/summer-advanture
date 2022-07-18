@@ -16,6 +16,16 @@ import {Title} from './summerAdventure/Title';
 import audio_30 from '../assets/sounds/HappySummer30.wav';
 import audio_15 from '../assets/sounds/HappySummer15.wav';
 import {CustomVideoComponent} from './components/CustomVideoComponent';
+import video_1 from "../assets/videos/1.mp4";
+import video_2 from "../assets/videos/2.mp4";
+import video_3 from "../assets/videos/3.mp4";
+import video_4 from "../assets/videos/4.mp4";
+import video_5 from "../assets/videos/5.mp4";
+import video_6 from "../assets/videos/6.mp4";
+import video_7 from "../assets/videos/7.mp4";
+import video_8 from "../assets/videos/8.mp4";
+// ### import them together
+
 
 interface ComponentProps {
 	titleText: string;
@@ -28,44 +38,90 @@ export const SummerAdventure: React.FC<ComponentProps> = ({titleText, titleColor
 	
 	return (
 		<Wrapper>
-			<Series>
-				{/* first text here */}
-				<Series.Sequence durationInFrames={100}>
-					<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
-						<Title titleText={'first title'} titleColor={'#495B53'} />
-					</AbsoluteFill>
-				</Series.Sequence>
-				{/* first two videos here */}
-				<Series.Sequence durationInFrames={50}>
-					<CustomVideoComponent />
-				</Series.Sequence>
-				{/* second text here */}
-				<Series.Sequence durationInFrames={50}>
-					<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
-						<Title titleText={'first title'} titleColor={'#495B53'} />
-					</AbsoluteFill>
-				</Series.Sequence>
-				{/* second two videos here */}
-				<Series.Sequence durationInFrames={50}>
-					<CustomVideoComponent />
-				</Series.Sequence>
-				{/* third text here */}
-				<Series.Sequence durationInFrames={50}>
-					<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
-						<Title titleText={'first title'} titleColor={'#495B53'} />
-					</AbsoluteFill>
-				</Series.Sequence>
-				{/* third three videos here */}
-				<Series.Sequence durationInFrames={70}>
-					<CustomVideoComponent />
-				</Series.Sequence>
-				{/* final text here */}
-				<Series.Sequence durationInFrames={100}>
-					<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
-						<Title titleText={'first title'} titleColor={'#495B53'} />
-					</AbsoluteFill>
-				</Series.Sequence>
-			</Series>
+			<Sequence from={0} durationInFrames={65}>
+				<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
+					<Title titleText={'with us you have the best summer ever'} titleColor={'#495B53'} />
+				</AbsoluteFill>
+			</Sequence>
+			<Sequence from={60} durationInFrames={135}>
+				<CustomVideoComponent 
+					myVideos= {
+						[
+							{
+								src: video_1, 
+								volume: 0,
+								from: 0,
+								style: null
+							},
+							{
+								src: video_2, 
+								volume: 0,
+								from: 65,
+								style: null 
+							},
+							{
+								src: video_3, 
+								volume: 0,
+								from: 90,
+								style: null 
+							},
+						]
+					}
+				/>
+			</Sequence>
+			<Sequence from={190} durationInFrames={40}>
+				<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
+					<Title titleText={'second test too fast'} titleColor={'#495B53'} />
+				</AbsoluteFill>
+			</Sequence>
+			<Sequence from={225} durationInFrames={100}>
+				<CustomVideoComponent 
+					myVideos= {
+						[
+							{
+								src: video_3, 
+								volume: 0,
+								from: 0,
+								style: null, 
+								startFrom: 85,
+            		endAt: 110
+							},
+							{
+								src: video_4, 
+								volume: 0,
+								from: 20,
+								style: null, 
+							},
+						]
+					}
+				/>
+			</Sequence>
+			<Sequence from={320} durationInFrames={35}>
+				<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
+					<Title titleText={'third test wef'} titleColor={'#495B53'} />
+				</AbsoluteFill>
+			</Sequence>
+			<Sequence from={350} durationInFrames={85}>
+				<CustomVideoComponent 
+					myVideos= {
+						[
+							{
+								src: video_8, 
+								volume: 0,
+								from: 0,
+								style: null,
+								startFrom: 1120,
+            		endAt: 1300
+							},
+						]
+					}
+				/>
+			</Sequence>
+			<Sequence from={430}>
+				<AbsoluteFill style={{backgroundColor: '#F4DB78'}}>
+					<Title titleText={'last text here'} titleColor={'#495B53'} />
+				</AbsoluteFill>
+			</Sequence>
 			<Audio src={audio_15} />
 		</Wrapper>
 	)
