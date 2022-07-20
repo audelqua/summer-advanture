@@ -6,15 +6,15 @@ import {
 import styled from 'styled-components';
 
 import {Title} from './Title';
-import fiftySecondAudio from '../../assets/sounds/HappySummer15.wav';
-import {CustomVideoComponent} from '../components/CustomVideoComponent';
-import firstVideo from "../../assets/videos/1.mp4";
-import secondVideo from "../../assets/videos/2.mp4";
-import thirdVideo from "../../assets/videos/3.mp4";
-import fourthVideo from "../../assets/videos/4.mp4";
-import eighthVideo from "../../assets/videos/8.mp4";
+import fiftySecondAudio from '../../../assets/sounds/HappySummer15.wav';
+import {CustomVideoComponent} from '../../components/CustomVideoComponent';
+import firstVideo from "../../../assets/videos/1.mp4";
+import secondVideo from "../../../assets/videos/2.mp4";
+import thirdVideo from "../../../assets/videos/3.mp4";
+import fourthVideo from "../../../assets/videos/4.mp4";
+import eighthVideo from "../../../assets/videos/8.mp4";
 // ### import them together
-import { Starter } from '../components/Starter';
+import { Starter } from '../../components/Starter';
 
 
 export const SummerAdventure: React.FC = () => {

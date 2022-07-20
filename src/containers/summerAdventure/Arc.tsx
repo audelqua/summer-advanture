@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {random, useVideoConfig} from 'remotion';
-import {COLOR_1, COLOR_2} from '../constants/constants';
+import {COLOR_1, COLOR_2} from '../../constants/constants';
 
 const getCircumferenceOfArc = (rx: number, ry: number) => {
 	return Math.PI * 2 * Math.sqrt((rx * rx + ry * ry) / 2);

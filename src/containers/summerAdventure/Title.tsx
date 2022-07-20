@@ -1,6 +1,5 @@
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {FONT_FAMILY} from '../constants/constants';
+import {FONT_FAMILY} from '../../constants/constants';
 import styled from 'styled-components';
 
 interface CustomTitleProps {
@@ -19,9 +18,6 @@ export const Title: React.FC<{
 	titleColor: string;
 }> = ({titleText, titleColor}) => {
 	console.log('titleColor', titleColor);
-	
-	const videoConfig = useVideoConfig();
-	const frame = useCurrentFrame();
 
 	return (
 		<CustomTitle titleColor={titleColor}>{titleText}</CustomTitle>

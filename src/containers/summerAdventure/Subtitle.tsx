@@ -1,6 +1,6 @@
 import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
-import {COLOR_1, FONT_FAMILY} from '../constants/constants';
+import {COLOR_1, FONT_FAMILY} from '../../constants/constants';
 
 const subtitle: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
