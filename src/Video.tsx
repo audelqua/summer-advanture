@@ -1,6 +1,5 @@
 import {Composition} from 'remotion';
-import {SummerAdventure} from './SummerAdventure';
-import {Logo} from './summerAdventure/Logo';
+import {SummerAdventure} from './summerAdventure';
 import { Starter } from './components/Starter';
 
 export const RemotionVideo: React.FC = () => {
