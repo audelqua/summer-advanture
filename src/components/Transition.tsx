@@ -52,7 +52,6 @@ export const Transition: React.FC<ComponentProps> = ({swipe, children}) => {
 	)
 }
 
-
 const Container = styled.div`
 	position: absolute;
 	top: 0;

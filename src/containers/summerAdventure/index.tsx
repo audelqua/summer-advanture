@@ -12,33 +12,34 @@ import thirdVideo from "../../../assets/videos/3.mp4";
 import { ShowCaseComponent } from '../../components/ShowCaseComponent';
 import { Transition } from '../../components/Transition'
 import config from "../../../config.json";
-import { cardCutSafeMargin, videoCutSafeMargin } from '../../constants'
 import bgYellow from "../../../assets/images/bg_blue_tint.png";
 
 
 export const SummerAdventure: React.FC = () => {
 	return (
 		<Wrapper>
-			<Sequence from={0} durationInFrames={60 + cardCutSafeMargin}>
+			<Sequence from={0} durationInFrames={60}>
 				<ShowCaseComponent 
+					fadeOut
 					title={config.text.start_text[0]}
 					subtitle=''
 					textColor={config.color[2]}
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
-			<Sequence from={60} durationInFrames={130 + videoCutSafeMargin}>
+			<Sequence from={60} durationInFrames={130}>
 				<IntroVideos />
 			</Sequence>
-			<Sequence from={190} durationInFrames={40 + videoCutSafeMargin}>
+			<Sequence from={190} durationInFrames={40 + 10}>
 				<ShowCaseComponent 
+					fadeOut
 					title={config.text.middle_text[0].main || ''}
 					subtitle={config.text.middle_text[0].secondary || ''}
 					textColor={config.color[2]}
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
-			<Sequence from={230} durationInFrames={30 + videoCutSafeMargin}>
+			<Sequence from={230} durationInFrames={30 + 10}>
 				<Transition swipe='left'>
 					<CustomVideoComponent 
 						src={thirdVideo}
@@ -49,7 +50,7 @@ export const SummerAdventure: React.FC = () => {
 					/>
 				</Transition>
 			</Sequence>
-			<Sequence from={260} durationInFrames={90 + videoCutSafeMargin}>
+			<Sequence from={260} durationInFrames={90}>
 				<Transition swipe='top'>
 					<CustomVideoComponent 
 						src={fourthVideo}
@@ -61,6 +62,7 @@ export const SummerAdventure: React.FC = () => {
 			</Sequence>
 			<Sequence from={350} durationInFrames={30 + 2}>
 				<ShowCaseComponent 
+					fadeOut
 					title={config.text.middle_text[1].product_id || ''}
 					subtitle={config.text.middle_text[1].quantity || ''}
 					textColor={config.color[2]}
@@ -76,6 +78,7 @@ export const SummerAdventure: React.FC = () => {
 			</Sequence>
 			<Sequence from={430}>
 				<ShowCaseComponent 
+					fadeOut
 					showLogo
 					title={config.text.end_text[0]}
 					subtitle=''

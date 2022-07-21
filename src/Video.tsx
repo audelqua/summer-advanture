@@ -7,7 +7,6 @@ import config from "../config.json";
 import bgYellow from "../assets/images/bg_blue_tint.png";
 import thirdVideo from "../assets/videos/3.mp4";
 import fourthVideo from "../assets/videos/4.mp4";
-import { cardCutSafeMargin, videoCutSafeMargin } from './constants'
 
 export const RemotionVideo: React.FC = () => {
 
@@ -24,7 +23,7 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="starterCard"
 				component={ShowCaseComponent}
-				durationInFrames={60 + cardCutSafeMargin}
+				durationInFrames={60}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -32,13 +31,14 @@ export const RemotionVideo: React.FC = () => {
 					title: config.text.start_text[0],
 					subtitle: '',
 					textColor:config.color[2],
-					backgroundCover: bgYellow
+					backgroundCover: bgYellow,
+					fadeOut: true
 				}}
 			/>
 			<Composition
 				id="introVideos"
 				component={IntroVideos}
-				durationInFrames={130 + cardCutSafeMargin}
+				durationInFrames={130}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -46,7 +46,7 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="middleCard"
 				component={ShowCaseComponent}
-				durationInFrames={40 + cardCutSafeMargin}
+				durationInFrames={40}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -54,13 +54,14 @@ export const RemotionVideo: React.FC = () => {
 					title: config.text.middle_text[0].main || '',
 					subtitle: config.text.middle_text[0].secondary || '',
 					textColor:config.color[2],
-					backgroundCover: bgYellow
+					backgroundCover: bgYellow,
+					fadeOut: true
 				}}
 			/>
 			<Composition
 				id="scubaDiving-1"
 				component={CustomVideoComponent}
-				durationInFrames={30 + videoCutSafeMargin}
+				durationInFrames={30}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -75,7 +76,7 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="scubaDiving-2"
 				component={CustomVideoComponent}
-				durationInFrames={90 + videoCutSafeMargin}
+				durationInFrames={90}
 				fps={30}
 				width={1920}
 				height={1080}
@@ -103,7 +104,7 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="lastVideo"
 				component={CustomVideoComponent}
-				durationInFrames={50 + 10}
+				durationInFrames={50}
 				fps={30}
 				width={1920}
 				height={1080}

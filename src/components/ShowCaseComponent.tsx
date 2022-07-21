@@ -3,7 +3,8 @@ import {
   Img,
   useCurrentFrame,
   useVideoConfig,
-  spring
+  spring,
+  interpolate
 } from 'remotion';
 import styled from 'styled-components'
 
@@ -18,25 +19,37 @@ interface ComponentProps {
   textColor?: string,
   backgroundCover: string,
   showLogo?: boolean,
-  noBackground?: boolean
+  noBackground?: boolean,
+  fadeOut?: boolean,
 }
 
 export const ShowCaseComponent: React.FC<ComponentProps> = props => {
-  const { title, subtitle, textColor, backgroundCover, showLogo, noBackground } = props
+  const { title, subtitle, textColor, backgroundCover, showLogo, noBackground, fadeOut } = props
 
   const frame = useCurrentFrame()
-  const { fps } = useVideoConfig()
+  const { fps, durationInFrames } = useVideoConfig()
+
 
   const progress = spring({
     fps,
     frame: frame - 8,
     config: {
-      damping: 20,
-      stiffness: 120,
+      damping: 15,
+      stiffness: 220,
       mass: 0.5,
     }
   })
 
+  const opacity = interpolate(
+		frame,
+		[durationInFrames - 10, durationInFrames - 5],
+		[1, 0],
+		{
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	)
+  
   return (
     <AbsoluteFill
       style={{
@@ -54,6 +67,7 @@ export const ShowCaseComponent: React.FC<ComponentProps> = props => {
           position: 'absolute',
           fontSize: '80px',
           top: '45%',
+          opacity: fadeOut ? opacity : 1,
           transform: `scale(
             ${progress}
           )`,
@@ -69,6 +83,7 @@ export const ShowCaseComponent: React.FC<ComponentProps> = props => {
             textAlign: 'center',
             fontSize: '60px',
             top: '65%',
+            opacity: fadeOut ? opacity : 1,
             transform: `scale(
               ${progress}
             )`,
@@ -78,6 +93,7 @@ export const ShowCaseComponent: React.FC<ComponentProps> = props => {
       {showLogo && 
         <Logo 
           style={{
+            opacity: fadeOut ? opacity : 1,
             transform: `scale(
               ${progress}
             )`,

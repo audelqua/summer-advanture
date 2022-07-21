@@ -21,6 +21,7 @@ export const IntroVideos: React.FC = () => {
         src={thirdVideo}
         volume={0}
         from={85}
+        startFrom={10}
       />
       <CustomVideoComponent
         src={thirdVideo}

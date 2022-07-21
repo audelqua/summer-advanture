@@ -1,4 +1,5 @@
 import React from 'react';
+import config from '../../config.json'
 
 import styled from 'styled-components';
 
@@ -13,9 +14,6 @@ interface ComponentProps {
 }
 
 export const Subtitle: React.FC<ComponentProps> = ({text, color, style}) => {
-	// Import config from '../../../config.json'
-	// Console.log('config.main_font', config.main_font[0]);
-	// console.log('document.fonts', document.fonts);
 	
 	return (
 		<StyledSubtitle style={{...style}} titleColor={color}>{text}</StyledSubtitle>
@@ -23,7 +21,7 @@ export const Subtitle: React.FC<ComponentProps> = ({text, color, style}) => {
 }
 
 const StyledSubtitle = styled.span`
-	font-family: Bodoni;
+	font-family: ${config.secondary_font[0]};
 	font-weight: bold;
 	font-size: 70px;
 	color: ${(p: CustomTitleProps) => p.titleColor}
