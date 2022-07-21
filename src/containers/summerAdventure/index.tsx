@@ -8,20 +8,20 @@ import config from "../../../config.json";
 
 import fiftySecondAudio from '../../../assets/sounds/HappySummer15.wav';
 import bgYellow from "../../../assets/images/bg_blue_tint.png";
-import fourthVideo from "../../../assets/videos/4.mp4";
-import thirdVideo from "../../../assets/videos/3.mp4";
 
-import {CustomVideoComponent} from '../../components/CustomVideoComponent';
-import {IntroVideos} from '../../components/IntroVideos';
+import { CustomVideoComponent } from '../../components/CustomVideoComponent';
+import { IntroVideos } from '../../components/IntroVideos';
 import { ShowCaseComponent } from '../../components/ShowCaseComponent';
 import { Transition } from '../../components/Transition'
 
+const fourthVideo = require(`../../../assets/videos/${config.footage[3]}`);
+const thirdVideo = require(`../../../assets/videos/${config.footage[2]}`);
 
 export const SummerAdventure: React.FC = () => {
 	return (
 		<Wrapper>
 			<Sequence from={0} durationInFrames={60}>
-				<ShowCaseComponent 
+				<ShowCaseComponent
 					fadeOut
 					title={config.text.start_text[0]}
 					subtitle=''
@@ -33,7 +33,7 @@ export const SummerAdventure: React.FC = () => {
 				<IntroVideos />
 			</Sequence>
 			<Sequence from={190} durationInFrames={40 + 10}>
-				<ShowCaseComponent 
+				<ShowCaseComponent
 					fadeOut
 					title={config.text.middle_text[0].main || ''}
 					subtitle={config.text.middle_text[0].secondary || ''}
@@ -43,7 +43,7 @@ export const SummerAdventure: React.FC = () => {
 			</Sequence>
 			<Sequence from={230} durationInFrames={30 + 10}>
 				<Transition swipe='left'>
-					<CustomVideoComponent 
+					<CustomVideoComponent
 						src={thirdVideo}
 						volume={0}
 						from={0}
@@ -54,7 +54,7 @@ export const SummerAdventure: React.FC = () => {
 			</Sequence>
 			<Sequence from={260} durationInFrames={90}>
 				<Transition swipe='top'>
-					<CustomVideoComponent 
+					<CustomVideoComponent
 						src={fourthVideo}
 						volume={0}
 						from={0}
@@ -63,7 +63,7 @@ export const SummerAdventure: React.FC = () => {
 				</Transition>
 			</Sequence>
 			<Sequence from={350} durationInFrames={30 + 2}>
-				<ShowCaseComponent 
+				<ShowCaseComponent
 					fadeOut
 					title={config.text.middle_text[1].product_id || ''}
 					subtitle={config.text.middle_text[1].quantity || ''}
@@ -72,14 +72,14 @@ export const SummerAdventure: React.FC = () => {
 				/>
 			</Sequence>
 			<Sequence from={380} durationInFrames={50 + 10}>
-				<CustomVideoComponent 
+				<CustomVideoComponent
 					src={thirdVideo}
 					volume={0}
 					from={0}
 				/>
 			</Sequence>
 			<Sequence from={430}>
-				<ShowCaseComponent 
+				<ShowCaseComponent
 					fadeOut
 					showLogo
 					title={config.text.end_text[0]}

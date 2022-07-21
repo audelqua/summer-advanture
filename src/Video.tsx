@@ -9,8 +9,11 @@ import { IntroVideos } from './components/IntroVideos';
 import { CustomVideoComponent } from './components/CustomVideoComponent';
 
 import backgroundCover from "../assets/images/bg_blue_tint.png";
-import thirdVideo from "../assets/videos/3.mp4";
-import fourthVideo from "../assets/videos/4.mp4";
+
+
+const thirdVideo = require(`../assets/videos/${config.footage[2]}`);
+const fourthVideo = require(`../assets/videos/${config.footage[3]}`);
+
 
 export const RemotionVideo: React.FC = () => {
 
