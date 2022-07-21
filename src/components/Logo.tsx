@@ -1,6 +1,7 @@
 import {
 	AbsoluteFill,
-} from 'remotion';
+} from 'remotion'
+
 import { Image } from '../components/Image'
 import logo from '../../assets/images/logo_zebra.png';
 

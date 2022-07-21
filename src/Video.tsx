@@ -1,19 +1,13 @@
 import { Composition } from 'remotion';
-
 import config from "../config.json";
-
 import { SummerAdventure } from './containers/summerAdventure';
-
 import { ShowCaseComponent } from './components/ShowCaseComponent';
 import { IntroVideos } from './components/IntroVideos';
 import { CustomVideoComponent } from './components/CustomVideoComponent';
-
 import backgroundCover from "../assets/images/bg_blue_tint.png";
-
 
 const thirdVideo = require(`../assets/videos/${config.footage[2]}`);
 const fourthVideo = require(`../assets/videos/${config.footage[3]}`);
-
 
 export const RemotionVideo: React.FC = () => {
 

@@ -5,10 +5,8 @@ import {
 import styled from 'styled-components';
 
 import config from "../../../config.json";
-
 import fiftySecondAudio from '../../../assets/sounds/HappySummer15.wav';
 import bgYellow from "../../../assets/images/bg_blue_tint.png";
-
 import { CustomVideoComponent } from '../../components/CustomVideoComponent';
 import { IntroVideos } from '../../components/IntroVideos';
 import { ShowCaseComponent } from '../../components/ShowCaseComponent';

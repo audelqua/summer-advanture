@@ -1,6 +1,4 @@
-import {
-	Img
-} from 'remotion';
+import { Img } from 'remotion';
 
 interface ComponentProps {
   src: string;

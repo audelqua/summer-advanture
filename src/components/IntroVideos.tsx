@@ -1,6 +1,6 @@
 import React from 'react'
-import { CustomVideoComponent } from './CustomVideoComponent';
 
+import { CustomVideoComponent } from './CustomVideoComponent';
 import config from "../../config.json";
 
 const firstVideo = require(`../../assets/videos/${config.footage[0]}`);
