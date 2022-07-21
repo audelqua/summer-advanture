@@ -16,14 +16,13 @@ interface ComponentProps {
   title: string,
   subtitle?: string,
   textColor?: string,
-  animationType?: string,
   backgroundCover: string,
   showLogo?: boolean,
   noBackground?: boolean
 }
 
 export const ShowCaseComponent: React.FC<ComponentProps> = props => {
-  const { title, subtitle, textColor, animationType, backgroundCover, showLogo, noBackground } = props
+  const { title, subtitle, textColor, backgroundCover, showLogo, noBackground } = props
 
   const frame = useCurrentFrame()
   const { fps } = useVideoConfig()

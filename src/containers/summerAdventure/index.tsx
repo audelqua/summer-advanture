@@ -24,7 +24,6 @@ export const SummerAdventure: React.FC = () => {
 					title={config.text.start_text[0]}
 					subtitle=''
 					textColor={config.color[2]}
-					animationType=''
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
@@ -36,7 +35,6 @@ export const SummerAdventure: React.FC = () => {
 					title={config.text.middle_text[0].main || ''}
 					subtitle={config.text.middle_text[0].secondary || ''}
 					textColor={config.color[2]}
-					animationType=''
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
@@ -66,7 +64,6 @@ export const SummerAdventure: React.FC = () => {
 					title={config.text.middle_text[1].product_id || ''}
 					subtitle={config.text.middle_text[1].quantity || ''}
 					textColor={config.color[2]}
-					animationType=''
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
@@ -83,7 +80,6 @@ export const SummerAdventure: React.FC = () => {
 					title={config.text.end_text[0]}
 					subtitle=''
 					textColor={config.color[2]}
-					animationType=''
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
