@@ -4,6 +4,7 @@ import { AbsoluteFill, Video, Sequence } from "remotion";
 interface ComponentProps {
   src: string;
   volume: number;
+  playbackRate?: number;
   from: number;
   durationInFrames?: number;
   style?: object;
@@ -12,7 +13,7 @@ interface ComponentProps {
 }
 
 export const CustomVideoComponent: React.FC<ComponentProps> = props => {
-  const { src, volume, from, durationInFrames, style, startFrom, endAt } = props
+  const { src, volume, playbackRate, from, durationInFrames, style, startFrom, endAt } = props
 
   return (
     <AbsoluteFill>
@@ -23,6 +24,7 @@ export const CustomVideoComponent: React.FC<ComponentProps> = props => {
           style={style}
           startFrom={startFrom}
           endAt={endAt}
+          playbackRate={playbackRate}
         />
       </Sequence>
     </AbsoluteFill>

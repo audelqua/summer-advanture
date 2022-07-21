@@ -6,7 +6,8 @@ export const COLOR_4 = 'red' ;
 
 export const FONT_FAMILY = 'SF Pro Text, Helvetica, Arial, sans-serif';
 
-export const sequenceCutSafeMargin = 5
+export const cardCutSafeMargin = 5
+export const videoCutSafeMargin = 10
 
 
 // "dark_blue": "#142E54",

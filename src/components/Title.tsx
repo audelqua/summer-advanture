@@ -7,22 +7,22 @@ interface CustomTitleProps {
 }
 
 interface ComponentProps {
-		titleText: string;
-		titleColor: string;
+		text: string;
+		color: string;
 		style?: object
 }
 
-export const Title: React.FC<ComponentProps> = ({titleText, titleColor, style}) => {
+export const Title: React.FC<ComponentProps> = ({text, color, style}) => {
 	// Import config from '../../../config.json'
 	// Console.log('config.main_font', config.main_font[0]);
 	// console.log('document.fonts', document.fonts);
 	
 	return (
-		<CustomTitle style={{...style}} titleColor={titleColor}>{titleText}</CustomTitle>
+		<StyledTitle style={{...style}} titleColor={color}>{text}</StyledTitle>
 	)
 }
 
-const CustomTitle = styled.span`
+const StyledTitle = styled.span`
 	font-family: Bodoni;
 	font-weight: bold;
 	font-size: 70px;

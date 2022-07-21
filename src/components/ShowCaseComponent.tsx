@@ -7,7 +7,9 @@ import {
 } from 'remotion';
 import styled from 'styled-components'
 
-import { Title } from '../containers/summerAdventure/Title';
+import { Title } from './Title';
+import { Subtitle } from './Subtitle';
+import { Logo } from './Logo';
 import config from "../../config.json";
 
 interface ComponentProps {
@@ -15,27 +17,26 @@ interface ComponentProps {
   subtitle?: string,
   textColor?: string,
   animationType?: string,
-  backgroundCover: string
+  backgroundCover: string,
+  showLogo?: boolean,
+  noBackground?: boolean
 }
 
 export const ShowCaseComponent: React.FC<ComponentProps> = props => {
-  const { title, subtitle, textColor, animationType, backgroundCover } = props
+  const { title, subtitle, textColor, animationType, backgroundCover, showLogo, noBackground } = props
 
   const frame = useCurrentFrame()
   const { fps } = useVideoConfig()
 
-  // Const opacity = frame >= fps ? 1 : frame / fps
-  // const opacity = interpolate(frame, [0, fps], [0, 1], {extrapolateRight: 'clamp'})
   const progress = spring({
-		fps,
-		frame: frame - 8,
-		config: {
-			damping: 20,
+    fps,
+    frame: frame - 8,
+    config: {
+      damping: 20,
       stiffness: 120,
       mass: 0.5,
-      // OvershootClamping: true
-		},
-	});
+    }
+  })
 
   return (
     <AbsoluteFill
@@ -45,10 +46,10 @@ export const ShowCaseComponent: React.FC<ComponentProps> = props => {
         alignItems: 'center',
       }}
     >
-      <BackgroundImage src={backgroundCover} />
+      {!noBackground && <BackgroundImage src={backgroundCover} />}
       <Title
-        titleText={title}
-        titleColor={textColor || ''}
+        text={title}
+        color={textColor || ''}
         style={{
           zIndex: 1,
           position: 'absolute',
@@ -59,6 +60,31 @@ export const ShowCaseComponent: React.FC<ComponentProps> = props => {
           )`,
         }}
       />
+      {subtitle &&
+        <Subtitle
+          text={subtitle || ''}
+          color={textColor || ''}
+          style={{
+            zIndex: 1,
+            position: 'absolute',
+            textAlign: 'center',
+            fontSize: '60px',
+            top: '65%',
+            transform: `scale(
+              ${progress}
+            )`,
+          }}
+        />
+      }
+      {showLogo && 
+        <Logo 
+          style={{
+            transform: `scale(
+              ${progress}
+            )`,
+          }}
+        />
+      }
     </AbsoluteFill>
   )
 }

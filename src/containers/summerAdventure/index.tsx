@@ -7,21 +7,19 @@ import styled from 'styled-components';
 import fiftySecondAudio from '../../../assets/sounds/HappySummer15.wav';
 import {CustomVideoComponent} from '../../components/CustomVideoComponent';
 import {IntroVideos} from '../../components/IntroVideos';
-import thirdVideo from "../../../assets/videos/3.mp4";
 import fourthVideo from "../../../assets/videos/4.mp4";
-import eighthVideo from "../../../assets/videos/8.mp4";
-// ### import them together
+import thirdVideo from "../../../assets/videos/3.mp4";
 import { ShowCaseComponent } from '../../components/ShowCaseComponent';
 import { Transition } from '../../components/Transition'
 import config from "../../../config.json";
-import { sequenceCutSafeMargin } from '../../constants'
+import { cardCutSafeMargin, videoCutSafeMargin } from '../../constants'
 import bgYellow from "../../../assets/images/bg_blue_tint.png";
 
 
 export const SummerAdventure: React.FC = () => {
 	return (
 		<Wrapper>
-			<Sequence from={0} durationInFrames={60 + sequenceCutSafeMargin}>
+			<Sequence from={0} durationInFrames={60 + cardCutSafeMargin}>
 				<ShowCaseComponent 
 					title={config.text.start_text[0]}
 					subtitle=''
@@ -30,59 +28,59 @@ export const SummerAdventure: React.FC = () => {
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
-			<Sequence from={60} durationInFrames={130 + sequenceCutSafeMargin}>
+			<Sequence from={60} durationInFrames={130 + videoCutSafeMargin}>
 				<IntroVideos />
 			</Sequence>
-			<Sequence from={190} durationInFrames={40 + sequenceCutSafeMargin}>
+			<Sequence from={190} durationInFrames={40 + videoCutSafeMargin}>
 				<ShowCaseComponent 
-					title={config.text.start_text[0]}
-					subtitle=''
+					title={config.text.middle_text[0].main || ''}
+					subtitle={config.text.middle_text[0].secondary || ''}
 					textColor={config.color[2]}
 					animationType=''
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
-			<Sequence from={225} durationInFrames={25}>
+			<Sequence from={230} durationInFrames={30 + videoCutSafeMargin}>
 				<Transition swipe='left'>
 					<CustomVideoComponent 
 						src={thirdVideo}
 						volume={0}
 						from={0}
-						startFrom={60}
-						endAt={130}
+						startFrom={120}
+						endAt={160}
 					/>
 				</Transition>
 			</Sequence>
-			<Sequence from={250} durationInFrames={110}>
-				<Transition swipe='bottom'>
+			<Sequence from={260} durationInFrames={90 + videoCutSafeMargin}>
+				<Transition swipe='top'>
 					<CustomVideoComponent 
 						src={fourthVideo}
 						volume={0}
 						from={0}
+						playbackRate={2}
 					/>
 				</Transition>
 			</Sequence>
-			<Sequence from={320} durationInFrames={35}>
+			<Sequence from={350} durationInFrames={30 + 2}>
 				<ShowCaseComponent 
-					title={config.text.start_text[0]}
-					subtitle=''
+					title={config.text.middle_text[1].product_id || ''}
+					subtitle={config.text.middle_text[1].quantity || ''}
 					textColor={config.color[2]}
 					animationType=''
 					backgroundCover={bgYellow}
 				/>
 			</Sequence>
-			<Sequence from={350} durationInFrames={85}>
+			<Sequence from={380} durationInFrames={50 + 10}>
 				<CustomVideoComponent 
-					src={eighthVideo}
+					src={thirdVideo}
 					volume={0}
 					from={0}
-					startFrom={1120}
-					endAt={1300}
 				/>
 			</Sequence>
 			<Sequence from={430}>
 				<ShowCaseComponent 
-					title={config.text.start_text[0]}
+					showLogo
+					title={config.text.end_text[0]}
 					subtitle=''
 					textColor={config.color[2]}
 					animationType=''
