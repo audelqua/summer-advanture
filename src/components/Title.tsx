@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
 interface CustomTitleProps {
@@ -15,12 +14,13 @@ interface ComponentProps {
 export const Title: React.FC<ComponentProps> = ({text, color, style}) => {
 	// Import config from '../../../config.json'
 	// Console.log('config.main_font', config.main_font[0]);
-	// console.log('document.fonts', document.fonts);
+	console.log('document.fonts', document.fonts);
 	
 	return (
 		<StyledTitle style={{...style}} titleColor={color}>{text}</StyledTitle>
 	)
 }
+console.log(window);
 
 const StyledTitle = styled.span`
 	font-family: Bodoni;

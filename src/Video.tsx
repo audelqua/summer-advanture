@@ -10,6 +10,7 @@ import fourthVideo from "../assets/videos/4.mp4";
 import { cardCutSafeMargin, videoCutSafeMargin } from './constants'
 
 export const RemotionVideo: React.FC = () => {
+
 	return (
 		<>
 			<Composition
@@ -127,5 +128,5 @@ export const RemotionVideo: React.FC = () => {
 				}}
 			/>
 		</>
-	);
-};
+	)
+}
