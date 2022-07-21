@@ -2,33 +2,29 @@ import React from 'react';
 import { AbsoluteFill, Video, Sequence } from "remotion";
 
 interface ComponentProps {
-  myVideos: {
-    src: string;
-    volume: number;
-    from: number;
-    style?: object;
-    startFrom?: number;
-    endAt?: number,
-    title?: string,
-    subtitle?: string
-  }[]
-  // ### need update 
+  src: string;
+  volume: number;
+  from: number;
+  durationInFrames?: number;
+  style?: object;
+  startFrom?: number;
+  endAt?: number,
 }
 
-export const CustomVideoComponent: React.FC<ComponentProps> = ({ myVideos }) => {
+export const CustomVideoComponent: React.FC<ComponentProps> = props => {
+  const { src, volume, from, durationInFrames, style, startFrom, endAt } = props
+
   return (
     <AbsoluteFill>
-      {myVideos.map((video, index) =>
-        <Sequence key={index} from={video.from}>
-          <Video
-            src={video.src}
-            volume={() => video.volume}
-            style={video.style}
-            startFrom={video.startFrom}
-            endAt={video.endAt}
-          />
-        </Sequence>
-      )}
+      <Sequence from={from} durationInFrames={durationInFrames}>
+        <Video
+          src={src}
+          volume={() => volume}
+          style={style}
+          startFrom={startFrom}
+          endAt={endAt}
+        />
+      </Sequence>
     </AbsoluteFill>
   )
 }

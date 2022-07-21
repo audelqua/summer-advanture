@@ -1,6 +1,6 @@
 import {Composition} from 'remotion';
 import {SummerAdventure} from './containers/summerAdventure';
-import { Starter } from './components/Starter';
+import { ShowCaseComponent } from './components/ShowCaseComponent';
 
 export const RemotionVideo: React.FC = () => {
 	return (
@@ -15,7 +15,7 @@ export const RemotionVideo: React.FC = () => {
 			/>
 			<Composition
 				id="Starter"
-				component={Starter}
+				component={ShowCaseComponent}
 				durationInFrames={65}
 				fps={30}
 				width={1920}
