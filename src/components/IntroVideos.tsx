@@ -1,5 +1,5 @@
 import React from 'react'
-import {CustomVideoComponent} from './CustomVideoComponent';
+import { CustomVideoComponent } from './CustomVideoComponent';
 import firstVideo from "../../assets/videos/1.mp4";
 import secondVideo from "../../assets/videos/2.mp4";
 import thirdVideo from "../../assets/videos/3.mp4";

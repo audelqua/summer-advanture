@@ -1,10 +1,14 @@
-import {Composition} from 'remotion';
-import {SummerAdventure} from './containers/summerAdventure';
-import { ShowCaseComponent } from './components/ShowCaseComponent';
-import {IntroVideos} from './components/IntroVideos';
-import {CustomVideoComponent} from './components/CustomVideoComponent';
+import { Composition } from 'remotion';
+
 import config from "../config.json";
-import bgYellow from "../assets/images/bg_blue_tint.png";
+
+import { SummerAdventure } from './containers/summerAdventure';
+
+import { ShowCaseComponent } from './components/ShowCaseComponent';
+import { IntroVideos } from './components/IntroVideos';
+import { CustomVideoComponent } from './components/CustomVideoComponent';
+
+import backgroundCover from "../assets/images/bg_blue_tint.png";
 import thirdVideo from "../assets/videos/3.mp4";
 import fourthVideo from "../assets/videos/4.mp4";
 
@@ -30,8 +34,8 @@ export const RemotionVideo: React.FC = () => {
 				defaultProps={{
 					title: config.text.start_text[0],
 					subtitle: '',
-					textColor:config.color[2],
-					backgroundCover: bgYellow,
+					textColor: config.color[2],
+					backgroundCover,
 					fadeOut: true
 				}}
 			/>
@@ -53,8 +57,8 @@ export const RemotionVideo: React.FC = () => {
 				defaultProps={{
 					title: config.text.middle_text[0].main || '',
 					subtitle: config.text.middle_text[0].secondary || '',
-					textColor:config.color[2],
-					backgroundCover: bgYellow,
+					textColor: config.color[2],
+					backgroundCover,
 					fadeOut: true
 				}}
 			/>
@@ -97,8 +101,8 @@ export const RemotionVideo: React.FC = () => {
 				defaultProps={{
 					title: config.text.middle_text[1].product_id || '',
 					subtitle: config.text.middle_text[1].quantity || '',
-					textColor:config.color[2],
-					backgroundCover: bgYellow
+					textColor: config.color[2],
+					backgroundCover
 				}}
 			/>
 			<Composition
@@ -124,8 +128,8 @@ export const RemotionVideo: React.FC = () => {
 				defaultProps={{
 					showLogo: true,
 					title: config.text.end_text[0],
-					textColor:config.color[2],
-					backgroundCover: bgYellow
+					textColor: config.color[2],
+					backgroundCover
 				}}
 			/>
 		</>

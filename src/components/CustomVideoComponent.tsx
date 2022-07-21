@@ -13,7 +13,15 @@ interface ComponentProps {
 }
 
 export const CustomVideoComponent: React.FC<ComponentProps> = props => {
-  const { src, volume, playbackRate, from, durationInFrames, style, startFrom, endAt } = props
+  const { src, 
+    volume, 
+    playbackRate, 
+    from, 
+    durationInFrames, 
+    style, 
+    startFrom, 
+    endAt 
+  } = props
 
   return (
     <AbsoluteFill>

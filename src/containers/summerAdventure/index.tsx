@@ -4,15 +4,17 @@ import {
 } from 'remotion';
 import styled from 'styled-components';
 
+import config from "../../../config.json";
+
 import fiftySecondAudio from '../../../assets/sounds/HappySummer15.wav';
-import {CustomVideoComponent} from '../../components/CustomVideoComponent';
-import {IntroVideos} from '../../components/IntroVideos';
+import bgYellow from "../../../assets/images/bg_blue_tint.png";
 import fourthVideo from "../../../assets/videos/4.mp4";
 import thirdVideo from "../../../assets/videos/3.mp4";
+
+import {CustomVideoComponent} from '../../components/CustomVideoComponent';
+import {IntroVideos} from '../../components/IntroVideos';
 import { ShowCaseComponent } from '../../components/ShowCaseComponent';
 import { Transition } from '../../components/Transition'
-import config from "../../../config.json";
-import bgYellow from "../../../assets/images/bg_blue_tint.png";
 
 
 export const SummerAdventure: React.FC = () => {

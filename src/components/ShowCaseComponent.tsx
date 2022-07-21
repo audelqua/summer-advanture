@@ -8,10 +8,12 @@ import {
 } from 'remotion';
 import styled from 'styled-components'
 
+import config from "../../config.json";
+
 import { Title } from './Title';
 import { Subtitle } from './Subtitle';
 import { Logo } from './Logo';
-import config from "../../config.json";
+
 
 interface ComponentProps {
   title: string,

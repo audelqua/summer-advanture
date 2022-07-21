@@ -4,6 +4,8 @@ import {
 import { Image } from '../components/Image'
 import logo from '../../assets/images/logo_zebra.png';
 
+
+
 interface ComponentProps {
 	style: object
 }

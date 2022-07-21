@@ -1,7 +1,6 @@
 import { continueRender, delayRender, staticFile } from "remotion"
 import config from '../../config.json'
 
-
 export const fontLoader = () => {
   const waitForFont = delayRender()
   const mainFont = new FontFace(
